@@ -4,22 +4,27 @@
 
 ```bash
 git clone https://github.com/xsohe/test-toko.git
+```
+
+### 2. Change to directory test-toko
+
+```bash
 cd test-toko
 ```
 
-### 2. Install dependencies
+### 3. Install dependencies
 
 ```bash
 npm install
 ```
 
-### 3. Seed Database
+### 4. Seed Database
 
 ```bash
 npm run seed
 ```
 
-### 4. Run The APP
+### 5. Run The APP
 
 ```bash
 npm run start
