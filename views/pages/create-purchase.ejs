@@ -1,0 +1,38 @@
+<div class="row justify-content-center">
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-header bg-primary text-white">
+        <h4 class="mb-0"><i class="fas fa-plus"></i> Buat Pembelian Baru</h4>
+      </div>
+      <div class="card-body">
+        <form method="POST" action="/purchases/create" id="purchaseForm">
+          <div class="mb-3">
+            <label for="produk_id" class="form-label">Pilih Produk</label>
+            <select class="form-select" id="produk_id" name="produk_id" required>
+              <option value="">-- Pilih Produk --</option>
+              <% products.forEach(product => { %>
+              <option value="<%= product.id %>" data-harga="<%= product.harga %>" data-stock="<%= product.stock %>"><%= product.nama %> - Rp <%= product.harga.toLocaleString('id-ID') %> (Stock: <%= product.stock %>)</option>
+              <% }) %>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="jumlah" class="form-label">Jumlah</label>
+            <input type="number" class="form-control" id="jumlah" name="jumlah" min="1" required />
+            <div class="form-text" id="stockInfo"></div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Total Harga</label>
+            <div class="form-control-plaintext h5 text-success" id="totalHarga">Rp 0</div>
+          </div>
+
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <a href="/purchases" class="btn btn-secondary"> <i class="fas fa-arrow-left"></i> Kembali </a>
+            <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Buat Pembelian</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

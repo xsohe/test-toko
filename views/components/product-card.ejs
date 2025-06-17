@@ -1,0 +1,14 @@
+<div class="col-md-6 col-lg-4 mb-4">
+  <div class="card h-100 product-card">
+    <div class="card-body">
+      <h5 class="card-title"><%= product.nama %></h5>
+      <p class="card-text">
+        <span class="badge bg-secondary"><%= product.kategori %></span>
+      </p>
+      <div class="d-flex justify-content-between align-items-center">
+        <span class="currency text-success h5"> Rp <%= product.harga.toLocaleString('id-ID') %> </span>
+        <span class="badge <%= product.stock > 10 ? 'bg-success' : product.stock > 0 ? 'bg-warning' : 'bg-danger' %>"> Stock: <%= product.stock || 0 %> </span>
+      </div>
+    </div>
+  </div>
+</div>
